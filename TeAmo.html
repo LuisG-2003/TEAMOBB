@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+        body {
+            font-family: 'Great Vibes', cursive;
+            text-align: center;
+            background: url('fondo3.jpg') no-repeat center center fixed; /* Ajuste automático */
+            background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            width: 450px;
+        }
+
+        h1 {
+            color: #ff4d4d;
+            font-size: 32px;
+            margin-bottom: 20px;
+            white-space: nowrap; /* Mantiene el texto en una sola línea */
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 30px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 10px;
+            font-family: 'Great Vibes', cursive;
+        }
+
+        #yesButton {
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        #noButton {
+            background-color: #4d4d4d;
+            color: white;
+            position: relative;
+        }
+
+        #message {
+            font-size: 24px;
+            color: #ff4d4d;
+            margin-top: 20px;
+            font-weight: bold;
+            font-family: 'Great Vibes', cursive;
+        }
+
+        /* Estilos para la imagen centrada */
+        #loveImage {
+            display: none;
+            margin: 20px auto;
+            max-width: 80%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>¿Quieres ser mi San Valentín?</h1>
+        <div class="buttons">
+            <button id="yesButton" onclick="showMessage()">Sí</button>
+            <button id="noButton" onmouseover="moveButton()">No</button>
+        </div>
+        <p id="message"></p>
+        <img id="loveImage" src="fotito.jpg" alt="Te amo"> <!-- Imagen que aparecerá -->
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").innerText = "¡Sabía que dirías que sí! ❤️Te Amo Muchísimo❤️";
+            document.getElementById("loveImage").style.display = "block"; // Muestra la imagen
+        }
+
+        function moveButton() {
+            let x = Math.random() * 300 - 150;
+            let y = Math.random() * 200 - 100;
+            document.getElementById("noButton").style.transform = `translate(${x}px, ${y}px)`;
+        }
+    </script>
+
+</body>
+</html>
+
